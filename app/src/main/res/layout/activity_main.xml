@@ -10,35 +10,50 @@
 
     <FrameLayout
         android:id="@+id/bottomsheet"
+
         android:layout_width="match_parent"
         android:layout_height="550dp"
         android:background="@drawable/shape_bottomsheet"
-        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior" >
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
 
-    <ImageView
-        android:layout_width="70dp"
-        android:layout_height="wrap_content"
-        android:scaleType="centerCrop"
-        android:layout_gravity="center|top"
-        android:src="@drawable/ic_baseline_horizontal_rule_24"
-        />
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|top"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_baseline_horizontal_rule_24" />
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/fragment_container_view"
+            app:navGraph="@navigation/nav"
+            app:defaultNavHost="true"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
     </FrameLayout>
 
+    <View
+    android:layout_width="match_parent"
+        android:background="@color/baseline_grey"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="63.5dp"
+    android:layout_height="1dp"/>
+
 
     <nl.joery.animatedbottombar.AnimatedBottomBar
-        android:id="@+id/bottom_bar"
-        android:background="#FFF"
+        android:id="@+id/bottomBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:abb_selectedTabType="text"
-        app:abb_indicatorAppearance="round"
-        app:abb_indicatorMargin="16dp"
-        app:abb_indicatorHeight="4dp"
-        app:abb_tabs="@menu/bottom_menu"
         android:layout_gravity="bottom"
-
-        app:abb_selectedIndex="1" />
+        android:background="#FFF"
+        app:abb_indicatorAppearance="round"
+        app:abb_indicatorHeight="4dp"
+        app:abb_indicatorMargin="16dp"
+        app:abb_selectedIndex="1"
+        app:abb_selectedTabType="text"
+        app:abb_tabs="@menu/bottom_menu"
+        app:abb_textStyle="bold" />
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
