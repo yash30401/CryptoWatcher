@@ -2,10 +2,14 @@ package com.devyash.cryptocurrency.crypto.bitcoin.ethereum.cryptowatcher
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.TypedValue
 import android.widget.PopupMenu
+import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.navigation.fragment.findNavController
 import com.devyash.cryptocurrency.crypto.bitcoin.ethereum.cryptowatcher.databinding.ActivityMainBinding
 import com.google.android.material.bottomsheet.BottomSheetBehavior
+import nl.joery.animatedbottombar.AnimatedBottomBar
 
 
 class MainActivity : AppCompatActivity() {
@@ -18,12 +22,12 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         BottomSheetBehavior.from(binding.bottomsheet).apply {
-            peekHeight=200
-
-            this.state=BottomSheetBehavior.STATE_HALF_EXPANDED
-
+            peekHeight=binding.bottomBar.height+1300
 
         }
+
+
+
 
 
         val navHostFragment=supportFragmentManager.findFragmentById(R.id.fragment_container_view)
