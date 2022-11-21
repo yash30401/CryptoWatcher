@@ -25,4 +25,20 @@
 
     </FrameLayout>
 
+
+    <nl.joery.animatedbottombar.AnimatedBottomBar
+        android:id="@+id/bottom_bar"
+        android:background="#FFF"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:abb_selectedTabType="text"
+        app:abb_indicatorAppearance="round"
+        app:abb_indicatorMargin="16dp"
+        app:abb_indicatorHeight="4dp"
+        app:abb_tabs="@menu/bottom_menu"
+        android:layout_gravity="bottom"
+
+        app:abb_selectedIndex="1" />
+
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
