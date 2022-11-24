@@ -2,10 +2,10 @@
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/coordinatorLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/darkBlueUpper"
-    android:id="@+id/coordinatorLayout"
     tools:context=".MainActivity">
 
 
@@ -26,22 +26,26 @@
             android:scaleType="centerCrop"
             android:src="@drawable/ic_baseline_horizontal_rule_24" />
 
-        <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/fragment_container_view"
-            android:name="androidx.navigation.fragment.NavHostFragment"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:defaultNavHost="true"
-            app:navGraph="@navigation/nav" />
+
+
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/view_pager"
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+
+
 
     </FrameLayout>
 
     <View
-    android:layout_width="match_parent"
-        android:background="@color/baseline_grey"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
         android:layout_gravity="bottom"
         android:layout_marginBottom="63.5dp"
-    android:layout_height="1dp"/>
+        android:background="@color/baseline_grey" />
 
 
     <nl.joery.animatedbottombar.AnimatedBottomBar
@@ -50,11 +54,11 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         android:background="#FFF"
+        app:abb_iconSize="28dp"
         app:abb_indicatorAppearance="round"
         app:abb_indicatorHeight="4dp"
         app:abb_indicatorMargin="16dp"
         app:abb_selectedIndex="0"
-        app:abb_iconSize="28dp"
 
         app:abb_selectedTabType="text"
         app:abb_tabs="@menu/bottom_menu"
