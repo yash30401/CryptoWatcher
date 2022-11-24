@@ -10,4 +10,6 @@
     <color name="darkBlueUpper">#185DE4</color>
     <color name="buttonBlue">#1C69FD</color>
     <color name="baseline_grey">#E9E9E9</color>
+    <color name="green">#5ADD5F</color>
+    <color name="red">#FD1F0F</color>
 </resources>
