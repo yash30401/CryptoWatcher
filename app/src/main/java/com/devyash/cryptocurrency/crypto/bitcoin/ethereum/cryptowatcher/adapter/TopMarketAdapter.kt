@@ -9,6 +9,8 @@ import com.bumptech.glide.Glide
 import com.devyash.cryptocurrency.crypto.bitcoin.ethereum.cryptowatcher.R
 import com.devyash.cryptocurrency.crypto.bitcoin.ethereum.cryptowatcher.databinding.CurrencyItemLayoutBinding
 import com.devyash.cryptocurrency.crypto.bitcoin.ethereum.cryptowatcher.models.CryptoCurrency
+import java.math.RoundingMode
+import java.text.DecimalFormat
 
 class TopMarketAdapter(var context:Context,val list:List<CryptoCurrency>):RecyclerView.Adapter<TopMarketAdapter.TopMarketViewHolder>() {
 
@@ -31,14 +33,31 @@ class TopMarketAdapter(var context:Context,val list:List<CryptoCurrency>):Recycl
             .into(holder.binding.currencyImageView)
 
         if(item.quotes!![0].percentChange24h>0){
+            val df=DecimalFormat("#,###.##")
+
+            df.roundingMode=RoundingMode.DOWN
+            val roundOff=df.format(item.quotes[0].percentChange24h)
+
             holder.binding.currencyChangeTextView.setTextColor(context.resources.getColor(R.color.green))
-            holder.binding.currencyChangeTextView.text="+ ${item.quotes[0].percentChange24h} %"
+            holder.binding.currencyChangeTextView.text="+ ${roundOff} %"
         }else{
+
+            val df=DecimalFormat("#,###.##")
+
+            df.roundingMode=RoundingMode.DOWN
+            val roundOff=df.format(item.quotes[0].percentChange24h)
+
             holder.binding.currencyChangeTextView.setTextColor(context.resources.getColor(R.color.red))
-            holder.binding.currencyChangeTextView.text= " ${item.quotes[0].percentChange24h} %"
+            holder.binding.currencyChangeTextView.text= " ${roundOff} %"
         }
 
-        holder.binding.currencyPriceTextView.text=item.quotes[0].price.toString()
+        val df=DecimalFormat("#,###.##")
+
+        df.roundingMode=RoundingMode.DOWN
+        val roundOff=df.format(item.quotes[0].price)
+
+
+        holder.binding.currencyPriceTextView.text="$"+roundOff.toString()
         holder.binding.currencySymbolTextView.text=item.symbol
     }
 
