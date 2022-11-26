@@ -2,6 +2,7 @@
     <string name="app_name">Crypto Watcher</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="assets">Assets</string>
+    <string name="oneday">%24hrs</string>
     <string name="bitcoin">Bitcoin</string>
     <string name="btc">BTC</string>
 </resources>

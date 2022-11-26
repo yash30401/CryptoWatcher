@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:padding="1dp"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp"
     android:layout_height="wrap_content">
 
 
@@ -43,10 +45,14 @@
 
     <ImageView
         android:id="@+id/currencyChartImageView"
-        android:layout_width="120dp"
+        android:layout_width="100dp"
         android:layout_height="60dp"
         android:layout_marginTop="10dp"
-        app:layout_constraintStart_toEndOf="@+id/currencyNameText"
+
+        android:padding="5dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toStartOf="@+id/currencyPriceTextView"
+        app:layout_constraintStart_toEndOf="@+id/currencySymbolTextView"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars" />
 
@@ -68,8 +74,8 @@
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_marginTop="1dp"
-        android:layout_marginEnd="50dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="0dp"
+        app:layout_constraintEnd_toStartOf="@+id/currencyChangeTextView"
         app:layout_constraintTop_toBottomOf="@+id/currencyPriceTextView"
         tools:srcCompat="@tools:sample/avatars" />
 
@@ -79,7 +85,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="1dp"
         android:layout_marginEnd="10dp"
-        android:padding="2dp"
+        android:padding="0dp"
         android:text="12.3"
         android:textSize="12sp"
         android:textColor="#575757"

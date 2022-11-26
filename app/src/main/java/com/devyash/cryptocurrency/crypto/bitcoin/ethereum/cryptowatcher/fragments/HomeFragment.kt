@@ -31,6 +31,11 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
         getTopCurrencyList()
 
+        binding.SwipeRefreshLayout.setOnRefreshListener {
+            getTopCurrencyList()
+            binding.SwipeRefreshLayout.isRefreshing=false
+        }
+
 
     }
 
@@ -43,7 +48,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
                 binding.recylerview.adapter=TopMarketAdapter(requireContext(),res.body()!!.data.cryptoCurrencyList)
             }
 
-            Log.d("List","${res.body()!!.data.cryptoCurrencyList}")
+
         }
     }
 
