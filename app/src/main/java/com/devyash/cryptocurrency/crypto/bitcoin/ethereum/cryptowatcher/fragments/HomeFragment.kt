@@ -66,9 +66,9 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     private fun getTopCurrencyList(){
 
 
-//        if(binding.recylerview.si)
-            binding.loadinganim.visibility=View.VISIBLE
-
+        if(binding.recylerview.layoutManager?.itemCount==0) {
+            binding.loadinganim.visibility = View.VISIBLE
+        }
 
         lifecycleScope.launch (Dispatchers.IO){
             val res=ApiUtilities.getInstance().create(ApiInterface::class.java).getMarketData()
